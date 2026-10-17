@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="278.629" height="569.664" viewBox="0 0 278.629 569.664" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Ridge" opacity="0.5" style="mix-blend-mode:overlay">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M238.345 0.667053H40.2837C18.4064 0.667053 0.671395 18.2874 0.671395 40.0232V529.64C0.671395 551.376 18.4064 568.997 40.2837 568.997H238.345C260.222 568.997 277.957 551.376 277.957 529.64V40.0232C277.957 18.2874 260.222 0.667053 238.345 0.667053ZM40.2837 0C18.0356 0 0 17.919 0 40.0232V529.64C0 551.745 18.0356 569.664 40.2837 569.664H238.345C260.593 569.664 278.629 551.745 278.629 529.64V40.0232C278.629 17.919 260.593 0 238.345 0H40.2837Z" fill="url(#paint0_radial_173_213)"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_173_213" cx="0" cy="0" r="1" gradientTransform="matrix(-127.339 -28.1952 58.5593 -276.56 138.979 242.807)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#636363"/>
+<stop offset="1"/>
+</radialGradient>
+</defs>
+</svg>

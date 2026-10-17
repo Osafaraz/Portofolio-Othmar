@@ -1,0 +1,26 @@
+<svg preserveAspectRatio="xMidYMid meet" overflow="visible" width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="smile_shadow" x="0" y="0" width="150" height="150" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dx="-6" dy="4"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
+  <!-- Red Ellipse with Figma drop shadow -->
+  <g filter="url(#smile_shadow)">
+    <ellipse cx="75" cy="75" rx="64.5" ry="59.5" fill="#E4281F"/>
+  </g>
+  <!-- Authentic Tilted Cream Smile Face (-15deg), perfectly concentric -->
+  <g transform="translate(75, 75) rotate(-15) translate(-43.75, -43.75)">
+<g id="Group">
+<path id="Vector" d="M61.25 48.125H52.5C52.5 50.4456 51.5781 52.6712 49.9372 54.3122C48.2962 55.9531 46.0706 56.875 43.75 56.875C41.4294 56.875 39.2038 55.9531 37.5628 54.3122C35.9219 52.6712 35 50.4456 35 48.125H26.25C26.25 52.7663 28.0937 57.2175 31.3756 60.4994C34.6575 63.7813 39.1087 65.625 43.75 65.625C48.3913 65.625 52.8425 63.7813 56.1244 60.4994C59.4063 57.2175 61.25 52.7663 61.25 48.125ZM35 35C35 36.1603 34.5391 37.2731 33.7186 38.0936C32.8981 38.9141 31.7853 39.375 30.625 39.375C29.4647 39.375 28.3519 38.9141 27.5314 38.0936C26.7109 37.2731 26.25 36.1603 26.25 35C26.25 33.8397 26.7109 32.7269 27.5314 31.9064C28.3519 31.0859 29.4647 30.625 30.625 30.625C31.7853 30.625 32.8981 31.0859 33.7186 31.9064C34.5391 32.7269 35 33.8397 35 35ZM56.875 39.375C58.0353 39.375 59.1481 38.9141 59.9686 38.0936C60.7891 37.2731 61.25 36.1603 61.25 35C61.25 33.8397 60.7891 32.7269 59.9686 31.9064C59.1481 31.0859 58.0353 30.625 56.875 30.625C55.7147 30.625 54.6019 31.0859 53.7814 31.9064C52.9609 32.7269 52.5 33.8397 52.5 35C52.5 36.1603 52.9609 37.2731 53.7814 38.0936C54.6019 38.9141 55.7147 39.375 56.875 39.375Z" fill="#FCEEC9"/>
+<path id="Vector_2" fill-rule="evenodd" clip-rule="evenodd" d="M87.5 43.75C87.5 67.9131 67.9131 87.5 43.75 87.5C19.5869 87.5 0 67.9131 0 43.75C0 19.5869 19.5869 0 43.75 0C67.9131 0 87.5 19.5869 87.5 43.75ZM78.75 43.75C78.75 53.0326 75.0625 61.935 68.4987 68.4987C61.935 75.0625 53.0326 78.75 43.75 78.75C34.4674 78.75 25.565 75.0625 19.0013 68.4987C12.4375 61.935 8.75 53.0326 8.75 43.75C8.75 34.4674 12.4375 25.565 19.0013 19.0013C25.565 12.4375 34.4674 8.75 43.75 8.75C53.0326 8.75 61.935 12.4375 68.4987 19.0013C75.0625 25.565 78.75 34.4674 78.75 43.75Z" fill="#FCEEC9"/>
+</g>
+
+  </g>
+</svg>

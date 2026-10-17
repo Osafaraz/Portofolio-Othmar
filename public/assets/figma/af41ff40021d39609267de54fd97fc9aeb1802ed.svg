@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="7.11777" height="7.07077" viewBox="0 0 7.11777 7.07077" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Camera Holes (Stroke)" opacity="0.2" style="mix-blend-mode:lighten">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.55889 6.59816C5.26166 6.59816 6.64202 5.22691 6.64202 3.53538C6.64202 1.84386 5.26166 0.472606 3.55889 0.472606C1.85612 0.472606 0.475747 1.84386 0.475747 3.53538C0.475747 5.22691 1.85612 6.59816 3.55889 6.59816ZM3.55889 7.07077C5.5244 7.07077 7.11777 5.48792 7.11777 3.53538C7.11777 1.58284 5.5244 0 3.55889 0C1.59337 0 0 1.58284 0 3.53538C0 5.48792 1.59337 7.07077 3.55889 7.07077Z" fill="url(#paint0_linear_173_209)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_173_209" x1="3.18967" y1="7.07077" x2="3.18967" y2="-3.83266e-08" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>
