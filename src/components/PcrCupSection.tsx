@@ -61,12 +61,12 @@ export const PcrCupSection: React.FC = () => {
           {/* ASSET CLUSTER: Phone, Flyer, T-Shirt, Photo Card, Emoji (Mobile Order 2, Desktop Left) */}
           <div className="order-2 lg:order-1 relative w-full max-w-[340px] sm:max-w-[440px] lg:max-w-none lg:w-[650px] aspect-[650/600] lg:h-[600px] shrink-0 mx-auto select-none">
             
-            {/* 1. 3D Heart-Eyes Emoji (Partially cut off on the left edge as in Figma) */}
-            <div className="absolute -left-[clamp(24px,6vw,55px)] top-[1.5%] z-30 w-[clamp(90px,26%,180px)] aspect-square rotate-[20.95deg] pointer-events-none select-none">
+            {/* 1. 3D Heart-Eyes Emoji (Blurred foreground bokeh, shifted to the far left as in Figma) */}
+            <div className="absolute -left-[14%] sm:-left-[16%] lg:-left-[18%] -top-[4%] sm:-top-[5%] z-30 w-[28%] sm:w-[30%] lg:w-[30.8%] aspect-square rotate-[20.95deg] pointer-events-none select-none">
               <img
                 src="/assets/figma/f13d290a29579d7d0f26c057eb813be5e8b6b62d.png"
                 alt="3D Heart-Eyes Emoji"
-                className="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.18)]"
+                className="w-full h-full object-contain blur-[3.3px] drop-shadow-[0_12px_24px_rgba(0,0,0,0.18)]"
               />
             </div>
 
@@ -95,10 +95,10 @@ export const PcrCupSection: React.FC = () => {
             {/* 3. Tournament Flyer pinned on Left of Phone */}
             <div className="absolute left-0 top-[36.6%] z-20 w-[32.6%] aspect-[212/289] rotate-[3.42deg] drop-shadow-[4px_10px_25px_rgba(0,0,0,0.3)] hover:rotate-0 transition-transform duration-300">
               {/* Red pushpin on top of flyer */}
-              <div className="absolute -top-[10%] left-[48%] -translate-x-1/2 z-30 w-[22%] aspect-square drop-shadow-md -scale-x-100">
+              <div className="absolute -top-[8%] sm:-top-[9%] left-[38%] -translate-x-1/2 z-30 w-[19%] aspect-[73/88] -scale-x-100 drop-shadow-[5px_6px_10px_rgba(0,0,0,0.22)]">
                 <img
-                  src="/assets/figma/d3e5c2504cdd2fe251957eb8767e2df372b7ebf2.png"
-                  alt="Red Pin"
+                  src="/assets/images/red-pushpin-single.png"
+                  alt="Red Pushpin"
                   className="w-full h-full object-contain"
                   loading="lazy"
                   decoding="async"
@@ -124,8 +124,8 @@ export const PcrCupSection: React.FC = () => {
               />
             </div>
 
-            {/* 5. Green T-Shirt Mockup on Lower Right of Phone */}
-            <div className="absolute left-[36.9%] top-[43.3%] z-20 w-[58.4%] aspect-[380/310] rotate-[9.11deg] hover:rotate-[5deg] transition-transform duration-300">
+            {/* 5. Green T-Shirt Mockup on Lower Right (Behind Phone) */}
+            <div className="absolute left-[25%] top-[32%] z-0 w-[88%] aspect-[25/16] rotate-[9.11deg] hover:rotate-[6deg] transition-transform duration-300">
               <img
                 src="/assets/figma/8b3575b938c967ad1e35efefa8061a8eb1a8183d.png"
                 alt="PCR Cup T-Shirt Mockup"

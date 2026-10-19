@@ -2,30 +2,21 @@ import React from 'react';
 
 export const JtiExpoSection: React.FC = () => {
   return (
-    <section id="jti-expo" className="relative w-full lg:w-[1440px] min-h-0 lg:h-[950px] pt-14 sm:pt-20 lg:pt-[70px] px-4 sm:px-8 lg:px-[88px] isolate overflow-x-clip">
+    <section id="jti-expo" className="relative z-20 w-full lg:w-[1440px] min-h-0 lg:h-[960px] pt-14 sm:pt-20 lg:pt-[70px] px-4 sm:px-8 lg:px-[88px] overflow-visible">
       {/* Mobile-Only Atmospheric Gradient Blob */}
       <div className="lg:hidden absolute -right-[80px] top-[100px] w-[240px] h-[240px] rounded-full pointer-events-none opacity-35 blur-[28px] bg-[radial-gradient(ellipse_at_center,rgba(8,47,186,0.5)_0%,transparent_70%)] z-0" aria-hidden="true" />
 
-      {/* 1. Floating 3D Heart-Eyes Emoji at Top Right (partially cut off at right edge) */}
-      <div className="absolute -right-[clamp(35px,8vw,90px)] -top-[clamp(20px,4vw,40px)] z-30 w-[clamp(120px,28vw,240px)] aspect-square rotate-[-38.02deg] pointer-events-none select-none">
+      {/* 1. Large Blurred 3D Heart-Eyes Emoji filling gap between JTI & 4C (Intact shape, positioned cleanly below text, Figma Node 46:65) */}
+      <div className="absolute -left-[40px] sm:-left-[60px] lg:-left-[80px] top-[670px] sm:top-[700px] lg:top-[725px] z-30 w-[270px] sm:w-[325px] lg:w-[375px] aspect-square rotate-[31.61deg] pointer-events-none select-none">
         <img
           src="/assets/figma/f13d290a29579d7d0f26c057eb813be5e8b6b62d.png"
           alt="3D Heart-Eyes Emoji"
-          className="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.18)]"
-        />
-      </div>
-
-      {/* 2. Floating 3D Heart-Eyes Emoji at Bottom Left (partially cut off at left edge) */}
-      <div className="absolute -left-[clamp(40px,9vw,100px)] -bottom-[clamp(30px,6vw,70px)] z-30 w-[clamp(130px,30vw,270px)] aspect-square rotate-[15deg] pointer-events-none select-none">
-        <img
-          src="/assets/figma/f13d290a29579d7d0f26c057eb813be5e8b6b62d.png"
-          alt="3D Heart-Eyes Emoji"
-          className="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.18)]"
+          className="w-full h-full object-contain blur-[14px] drop-shadow-[0_16px_32px_rgba(0,0,0,0.18)]"
         />
       </div>
 
       {/* Main Container */}
-      <div className="relative w-full max-w-xl lg:max-w-none mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-0">
+      <div className="relative w-full max-w-xl lg:max-w-none mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 lg:gap-10">
         
         {/* LEFT: Title, Instagram, Description */}
         <div className="w-full lg:w-[536px] flex flex-col gap-4 sm:gap-6 z-20">
@@ -65,8 +56,8 @@ export const JtiExpoSection: React.FC = () => {
           </p>
         </div>
 
-        {/* RIGHT: Standee Signboard + Protruding 3D Logo + Smile Sticker */}
-        <div className="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-none lg:w-[500px] lg:h-[720px] shrink-0 flex items-center justify-center z-10 lg:pr-6 my-4 lg:my-0">
+        {/* RIGHT: Standee Signboard (Prominently sized as in Figma) + Protruding 3D Logo + Smile Sticker + Top-Right Emoji */}
+        <div className="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-none lg:w-[410px] shrink-0 flex items-center justify-center z-10 lg:mr-16 my-4 lg:my-0">
           
           {/* Standee Board */}
           <div className="relative w-full aspect-[449/734] drop-shadow-[0_20px_35px_rgba(0,0,0,0.22)]">
@@ -79,7 +70,7 @@ export const JtiExpoSection: React.FC = () => {
             />
 
             {/* Red Smile Sticker on Left Frame of Board (Solid Red + concentric cream face as in Figma) */}
-            <div className="absolute -left-[10%] top-[32%] z-30 w-[24%] aspect-square sticker-pop cursor-pointer rotate-[-16.32deg]">
+            <div className="absolute -left-[11%] top-[31%] z-30 w-[24%] aspect-square sticker-pop cursor-pointer rotate-[-16.32deg]">
               <img
                 src="/assets/stickers/sticker-smile-complete.svg"
                 alt="Smile Sticker"
@@ -89,14 +80,23 @@ export const JtiExpoSection: React.FC = () => {
               />
             </div>
 
-            {/* 3D JTI Expo Logo protruding at bottom-left across the legs */}
-            <div className="absolute -left-[18%] bottom-[4%] z-30 w-[78%] rotate-[4.81deg] hover:rotate-0 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer">
+            {/* 3D JTI Expo Logo protruding at bottom-left across legs (Cropped tightly without transparent margin, 100% matching Figma) */}
+            <div className="absolute -left-[15%] sm:-left-[16%] bottom-[7%] sm:bottom-[8%] z-30 w-[86%] sm:w-[88%] rotate-[4.81deg] hover:rotate-0 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer">
               <img
-                src="/assets/figma/80ce3dad18d3dbb8d62b44049d35d49b8e04d98a.png"
+                src="/assets/images/jti-expo-3d-logo-cropped.png"
                 alt="3D JTI EXPO Logo"
-                className="w-full h-auto object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.2)]"
+                className="w-full h-auto object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.24)]"
                 loading="lazy"
                 decoding="async"
+              />
+            </div>
+
+            {/* Floating 3D Heart-Eyes Emoji at Top Right (Outside the frame to the right, fully visible, not cut off as in Figma) */}
+            <div className="absolute -right-[70px] sm:-right-[80px] lg:-right-[90px] -top-[20px] sm:-top-[30px] z-30 w-[140px] sm:w-[160px] lg:w-[175px] aspect-square rotate-[-38.02deg] pointer-events-none select-none">
+              <img
+                src="/assets/figma/f13d290a29579d7d0f26c057eb813be5e8b6b62d.png"
+                alt="3D Heart-Eyes Emoji"
+                className="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.18)]"
               />
             </div>
           </div>

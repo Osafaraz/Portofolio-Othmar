@@ -185,10 +185,10 @@ export const AboutSection: React.FC = () => {
                 />
               </div>
 
-              {/* Name Tag Sticker (Exported image from Figma node 11:37) */}
+              {/* Name Tag Sticker (Clean transparent PNG from Figma node 11:37) */}
               <div className="absolute -bottom-[clamp(20px,5vw,32px)] -left-[clamp(16px,4vw,35px)] z-20 w-[clamp(170px,46vw,273px)] hover:scale-105 active:scale-95 transition-transform cursor-pointer">
                 <img
-                  src="/assets/figma/name_tag_sticker.png"
+                  src="/assets/figma/name_tag_sticker.png?v=clean2"
                   alt="Hello, My name is: Othmar"
                   className="w-full h-auto object-contain drop-shadow-[2px_6px_15px_rgba(0,0,0,0.2)]"
                   loading="lazy"
@@ -196,10 +196,10 @@ export const AboutSection: React.FC = () => {
                 />
               </div>
 
-              {/* Green Sticker "05' Kid" (Exported image from Figma node 11:38) */}
+              {/* Green Sticker "05' Kid" (Clean transparent PNG from Figma node 11:38) */}
               <div className="absolute -bottom-[clamp(22px,5.5vw,36px)] -right-[clamp(12px,3vw,24px)] z-20 w-[clamp(75px,20vw,122px)] hover:scale-105 active:scale-95 transition-transform cursor-pointer">
                 <img
-                  src="/assets/figma/green_kid_sticker.png"
+                  src="/assets/figma/green_kid_sticker.png?v=clean2"
                   alt="05' Kid"
                   className="w-full h-auto object-contain drop-shadow-[-2px_4px_10px_rgba(0,0,0,0.25)]"
                   loading="lazy"

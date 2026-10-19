@@ -40,13 +40,13 @@ export const Competition4CSection: React.FC = () => {
 
           {/* TWO PHONES MOCKUP CLUSTER (Mobile Order 2, Desktop Left) */}
           <div className="order-2 lg:order-1 relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-none lg:w-[650px] aspect-[650/550] lg:h-[550px] shrink-0 mx-auto my-4 lg:my-0 select-none">
-            {/* Shadow Ellipse 28 (Left Phone) */}
-            <div className="absolute left-[12.3%] top-[81.8%] w-[30.8%] h-[13.6%] -rotate-[14.77deg] pointer-events-none opacity-80">
+            {/* Shadow Ellipse 28 (Left Phone) - Tucked closely beneath left phone base */}
+            <div className="absolute left-[27%] top-[75%] w-[29%] h-[13.5%] -rotate-[14.77deg] pointer-events-none opacity-85">
               <img src="/assets/figma/087d57adbfb713ffa5e6a92f13ff3519f014407a.svg" alt="" className="w-full h-full" />
             </div>
 
-            {/* Shadow Ellipse 27 (Right Phone) */}
-            <div className="absolute left-[40%] top-[85.5%] w-[40%] h-[16.9%] rotate-[12.44deg] pointer-events-none opacity-80">
+            {/* Shadow Ellipse 27 (Right Phone) - Aligned directly beneath right phone base */}
+            <div className="absolute left-[44%] top-[77%] w-[38%] h-[16%] rotate-[12.44deg] pointer-events-none opacity-85">
               <img src="/assets/figma/bad087c1cf618adab1950b838c123d3edd6d1d0f.svg" alt="" className="w-full h-full" />
             </div>
 

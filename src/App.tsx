@@ -125,7 +125,7 @@ export const AppContent: React.FC = () => {
           >
             {/* 1. Hero Left Royal Blue (Figma 5:132) - Seamless Radial Gradient without bounding box cutoff */}
             <div
-              className="absolute left-[-450px] top-[260px] w-[1100px] h-[650px] rounded-full pointer-events-none opacity-85"
+              className="absolute left-[-450px] top-[200px] w-[1100px] h-[650px] rounded-full pointer-events-none opacity-85"
               style={{
                 background: 'radial-gradient(ellipse at 50% 50%, rgba(8, 47, 186, 0.6) 0%, rgba(8, 47, 188, 0.38) 35%, rgba(162, 89, 255, 0.2) 58%, transparent 75%)',
                 filter: 'blur(35px)',

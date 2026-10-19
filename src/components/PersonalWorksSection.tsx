@@ -2,30 +2,31 @@ import React from 'react';
 
 export const PersonalWorksSection: React.FC = () => {
   return (
-    <section id="works" className="relative w-full lg:w-[1440px] min-h-0 lg:h-[1782px] pt-14 sm:pt-20 lg:pt-[60px] pb-12 lg:pb-0 select-none overflow-x-clip px-4 sm:px-8 lg:px-0">
+    <section id="works" className="relative w-full lg:w-[1440px] min-h-0 lg:h-[1782px] pt-14 sm:pt-20 lg:pt-[60px] pb-12 lg:pb-0 select-none overflow-visible px-4 sm:px-8 lg:px-0">
       {/* Mobile-Only Atmospheric Gradient Blobs */}
       <div className="lg:hidden absolute -left-[70px] top-[180px] w-[220px] h-[220px] rounded-full pointer-events-none opacity-35 blur-[28px] bg-[radial-gradient(ellipse_at_center,rgba(8,47,186,0.45)_0%,transparent_70%)] z-0" aria-hidden="true" />
       <div className="lg:hidden absolute -right-[70px] top-[480px] w-[240px] h-[240px] rounded-full pointer-events-none opacity-35 blur-[28px] bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.45)_0%,transparent_70%)] z-0" aria-hidden="true" />
 
-      {/* 3D Laughing Emoji (node 51:340, partially cut off at right edge) */}
+      {/* 3D Laughing Emoji (Figma node 51:340: mentok ke kanan, sebagian masuk, authentic depth-of-field blur) */}
       <div 
-        className="absolute -right-[clamp(20px,5vw,50px)] lg:left-[1158px] lg:right-auto top-[10px] lg:top-[20px] z-20 w-[clamp(110px,26vw,320px)] aspect-square pointer-events-none select-none"
+        className="absolute -right-[70px] sm:-right-[90px] lg:-right-[150px] top-[130px] sm:top-[160px] lg:top-[185px] z-10 w-[220px] sm:w-[300px] lg:w-[420px] aspect-square pointer-events-none select-none"
         title="3D Laughing Emoji"
       >
         <img
           src="/assets/figma/dc1f25b1ca5028e9551c5a11fc58f1b2fe487ab5.png"
           alt="3D Laughing Emoji"
-          className="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.2)]"
+          className="w-full h-full object-contain blur-[8px] sm:blur-[10px] lg:blur-[14px] drop-shadow-[0_16px_32px_rgba(0,0,0,0.18)]"
+          style={{ filter: 'blur(14px) drop-shadow(0 16px 32px rgba(0,0,0,0.18))' }}
         />
       </div>
 
       {/* Title: Pers●nal W●rks with authentic badges replacing 'o's (Figma node 50:286) */}
       <div className="relative mb-8 sm:mb-12 lg:mb-[65px] text-center select-none">
-        <h2 className="font-['Montserrat'] font-black text-[clamp(28px,7.5vw,96px)] text-[#1e1e1e] tracking-tight inline-flex items-center justify-center leading-none flex-wrap">
+        <h2 className="font-['Montserrat'] font-black text-[clamp(28px,7.5vw,96px)] text-[#1e1e1e] tracking-tight inline-flex items-baseline justify-center leading-none flex-wrap">
           <span>Pers</span>
           
           {/* Sticker 1 replacing first 'o': Always With New Ideas badge (node 51:299) */}
-          <span className="inline-flex items-center justify-center mx-1 sm:mx-2 w-[clamp(24px,6.2vw,70px)] aspect-[70/64] relative sticker-pop cursor-pointer align-middle">
+          <span className="inline-block relative h-[0.70em] aspect-[70/64] translate-y-[0.08em] mx-[0.02em] sticker-pop cursor-pointer">
             <img
               src="/assets/stickers/sticker-always-complete.svg?v=ideas2"
               alt="Always With New Ideas sticker"
@@ -34,15 +35,15 @@ export const PersonalWorksSection: React.FC = () => {
           </span>
 
           <span>nal</span>
-          <span className="w-2 sm:w-5" />
-          <span>W</span>
+          <span className="inline-block w-[0.28em]" />
+          <span>W</span>  
 
-          {/* Sticker 2 replacing second 'o': Smile red sticker (node 51:294, Solid Red + concentric cream face as in Figma) */}
-          <span className="inline-flex items-center justify-center mx-1 sm:mx-2 w-[clamp(24px,6.2vw,70px)] aspect-[70/68] relative sticker-pop cursor-pointer align-middle">
+          {/* Sticker 2 replacing second 'o': Smile red sticker (node 51:294) */}
+          <span className="inline-block relative h-[0.70em] aspect-[68/62] translate-y-[0.08em] -ml-[0.03em] mr-[0.02em] sticker-pop cursor-pointer">
             <img
-              src="/assets/stickers/badge-smile-complete.svg"
+              src="/assets/stickers/badge-smile-complete.svg?v=red2"
               alt="Smile red sticker"
-              className="w-full h-full object-contain drop-shadow-[0_4px_12px_rgba(228,40,31,0.35)]"
+              className="w-full h-full object-contain"
             />
           </span>
 
@@ -50,10 +51,23 @@ export const PersonalWorksSection: React.FC = () => {
         </h2>
       </div>
 
-      {/* Dashed Timeline Line: Left on mobile (±24px), centered on desktop (x: 720px) */}
+      {/* Dashed Timeline Line: Left on mobile (20px/24px), centered on desktop (720px) */}
       <div 
-        className="absolute left-[20px] sm:left-[24px] lg:left-[720px] top-[140px] sm:top-[160px] lg:top-[222px] w-0 bottom-12 lg:bottom-auto lg:h-[1137px] border-l-[2px] sm:border-l-[3px] border-dashed border-[#1e1e1e]/60 pointer-events-none z-0" 
-      />
+        className="absolute left-[20px] sm:left-[24px] lg:left-[720px] -translate-x-1/2 top-[140px] sm:top-[160px] lg:top-[215px] bottom-12 lg:bottom-auto lg:h-[1140px] w-[6px] pointer-events-none z-0"
+      >
+        <svg className="w-full h-full" preserveAspectRatio="none">
+          <line
+            x1="3"
+            y1="0"
+            x2="3"
+            y2="100%"
+            stroke="#1e1e1e"
+            strokeWidth="4"
+            strokeDasharray="10 8"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
 
       {/* Timeline Categories Container */}
       <div className="relative w-full max-w-xl lg:max-w-none mx-auto flex flex-col gap-8 sm:gap-12 lg:gap-[75px] z-10">
@@ -61,10 +75,10 @@ export const PersonalWorksSection: React.FC = () => {
         {/* ITEM 1: Street Photography */}
         <div className="relative w-full">
           {/* Category Header */}
-          <div className="flex items-center lg:justify-end pl-[38px] sm:pl-[44px] lg:pl-0 lg:pr-[733px] gap-3 sm:gap-[18px] mb-3 sm:mb-[13px] relative">
-            {/* Dot on mobile is positioned on left line; on desktop it translates x */}
-            <div className="absolute left-[20px] sm:left-[24px] -translate-x-1/2 lg:relative lg:left-auto lg:translate-x-[13px] w-4 h-4 sm:w-[22px] sm:h-[22px] lg:w-[26px] lg:h-[26px] rounded-full bg-black shrink-0 order-first lg:order-last" />
-            <span className="font-['Montserrat'] font-medium text-[clamp(18px,4.5vw,36px)] text-black">
+          <div className="relative w-full h-[36px] sm:h-[44px] flex items-center mb-3 sm:mb-[16px]">
+            {/* Bullet Dot: perfectly centered on top of the dashed line (z-10) */}
+            <div className="absolute left-[20px] sm:left-[24px] lg:left-[720px] -translate-x-1/2 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-[22px] sm:h-[22px] lg:w-[26px] lg:h-[26px] rounded-full bg-[#1e1e1e] shrink-0 z-10 ring-4 ring-[#f4f7f4]" />
+            <span className="font-['Montserrat'] font-medium text-[clamp(18px,4.5vw,36px)] text-[#1e1e1e] pl-[38px] sm:pl-[44px] lg:pl-0 lg:absolute lg:right-[746px] lg:top-1/2 lg:-translate-y-1/2 whitespace-nowrap">
               Street Photography
             </span>
           </div>
@@ -95,9 +109,10 @@ export const PersonalWorksSection: React.FC = () => {
         {/* ITEM 2: Wedding Photography */}
         <div className="relative w-full">
           {/* Category Header */}
-          <div className="flex items-center justify-start pl-[38px] sm:pl-[44px] lg:pl-[707px] gap-3 sm:gap-[18px] mb-3 sm:mb-[13px] relative">
-            <div className="absolute left-[20px] sm:left-[24px] -translate-x-1/2 lg:relative lg:left-auto lg:-translate-x-[13px] w-4 h-4 sm:w-[22px] sm:h-[22px] lg:w-[26px] lg:h-[26px] rounded-full bg-black shrink-0" />
-            <span className="font-['Montserrat'] font-medium text-[clamp(18px,4.5vw,36px)] text-black">
+          <div className="relative w-full h-[36px] sm:h-[44px] flex items-center mb-3 sm:mb-[16px]">
+            {/* Bullet Dot: perfectly centered on top of the dashed line (z-10) */}
+            <div className="absolute left-[20px] sm:left-[24px] lg:left-[720px] -translate-x-1/2 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-[22px] sm:h-[22px] lg:w-[26px] lg:h-[26px] rounded-full bg-[#1e1e1e] shrink-0 z-10 ring-4 ring-[#f4f7f4]" />
+            <span className="font-['Montserrat'] font-medium text-[clamp(18px,4.5vw,36px)] text-[#1e1e1e] pl-[38px] sm:pl-[44px] lg:pl-0 lg:absolute lg:left-[746px] lg:top-1/2 lg:-translate-y-1/2 whitespace-nowrap">
               Wedding Photography
             </span>
           </div>
@@ -128,9 +143,10 @@ export const PersonalWorksSection: React.FC = () => {
         {/* ITEM 3: Sketching & Drawing */}
         <div className="relative w-full">
           {/* Category Header */}
-          <div className="flex items-center lg:justify-end pl-[38px] sm:pl-[44px] lg:pl-0 lg:pr-[733px] gap-3 sm:gap-[18px] mb-3 sm:mb-[13px] relative">
-            <div className="absolute left-[20px] sm:left-[24px] -translate-x-1/2 lg:relative lg:left-auto lg:translate-x-[13px] w-4 h-4 sm:w-[22px] sm:h-[22px] lg:w-[26px] lg:h-[26px] rounded-full bg-black shrink-0 order-first lg:order-last" />
-            <span className="font-['Montserrat'] font-medium text-[clamp(18px,4.5vw,36px)] text-black">
+          <div className="relative w-full h-[36px] sm:h-[44px] flex items-center mb-3 sm:mb-[16px]">
+            {/* Bullet Dot: perfectly centered on top of the dashed line (z-10) */}
+            <div className="absolute left-[20px] sm:left-[24px] lg:left-[720px] -translate-x-1/2 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-[22px] sm:h-[22px] lg:w-[26px] lg:h-[26px] rounded-full bg-[#1e1e1e] shrink-0 z-10 ring-4 ring-[#f4f7f4]" />
+            <span className="font-['Montserrat'] font-medium text-[clamp(18px,4.5vw,36px)] text-[#1e1e1e] pl-[38px] sm:pl-[44px] lg:pl-0 lg:absolute lg:right-[746px] lg:top-1/2 lg:-translate-y-1/2 whitespace-nowrap">
               Sketching & Drawing
             </span>
           </div>
@@ -161,9 +177,10 @@ export const PersonalWorksSection: React.FC = () => {
         {/* ITEM 4: 3D Animation Project */}
         <div className="relative w-full">
           {/* Category Header */}
-          <div className="flex items-center justify-start pl-[38px] sm:pl-[44px] lg:pl-[707px] gap-3 sm:gap-[18px] mb-3 sm:mb-[13px] relative">
-            <div className="absolute left-[20px] sm:left-[24px] -translate-x-1/2 lg:relative lg:left-auto lg:-translate-x-[13px] w-4 h-4 sm:w-[22px] sm:h-[22px] lg:w-[26px] lg:h-[26px] rounded-full bg-black shrink-0" />
-            <span className="font-['Montserrat'] font-medium text-[clamp(18px,4.5vw,36px)] text-black">
+          <div className="relative w-full h-[36px] sm:h-[44px] flex items-center mb-3 sm:mb-[16px]">
+            {/* Bullet Dot: perfectly centered on top of the dashed line (z-10) */}
+            <div className="absolute left-[20px] sm:left-[24px] lg:left-[720px] -translate-x-1/2 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-[22px] sm:h-[22px] lg:w-[26px] lg:h-[26px] rounded-full bg-[#1e1e1e] shrink-0 z-10 ring-4 ring-[#f4f7f4]" />
+            <span className="font-['Montserrat'] font-medium text-[clamp(18px,4.5vw,36px)] text-[#1e1e1e] pl-[38px] sm:pl-[44px] lg:pl-0 lg:absolute lg:left-[746px] lg:top-1/2 lg:-translate-y-1/2 whitespace-nowrap">
               3D Animation Project
             </span>
           </div>
