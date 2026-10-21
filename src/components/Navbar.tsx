@@ -59,29 +59,27 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
           paddingRight: 'max(16px, env(safe-area-inset-right, 16px))',
         }}
       >
-        {/* DESKTOP NAVBAR (>= 768px): Full 7-item glassmorphism pill */}
+        {/* DESKTOP NAVBAR (>= 768px): Sleek Minimalist Glass Pill */}
         <nav
           aria-label="Main Navigation"
-          className="hidden md:flex pointer-events-auto glass-nav px-3 py-2 rounded-full items-center gap-1 md:gap-2 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-white/60 transition-all duration-300"
+          className="hidden md:flex pointer-events-auto backdrop-blur-md bg-white/80 px-2 py-1 rounded-full items-center gap-1 shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-black/[0.06] transition-all duration-300"
         >
           {/* Brand Dot / Logo Icon */}
           <button
             onClick={() => onNavigate('home')}
-            className="flex items-center gap-1.5 pl-2 pr-1.5 py-1 text-left focus:outline-none focus:ring-2 focus:ring-[#e4281f] rounded-full min-h-[44px]"
+            className="flex items-center gap-1.5 pl-2 pr-2 py-1 text-left focus:outline-none focus:ring-1 focus:ring-[#e4281f] rounded-full transition-opacity hover:opacity-80 cursor-pointer"
             aria-label="Go to top"
           >
-            <div className="w-5 h-5 rounded-full bg-[#e4281f] flex items-center justify-center shadow-xs">
-              <span className="text-[10px] font-black text-white leading-none">O</span>
+            <div className="w-3.5 h-3.5 rounded-full bg-[#e4281f] flex items-center justify-center">
+              <span className="text-[8px] font-black text-white leading-none">O</span>
             </div>
-            <span className="font-['Montserrat'] font-black text-xs text-[#1e1e1e] tracking-tight">
+            <span className="font-['Montserrat'] font-black text-[11px] text-[#1e1e1e] tracking-tight">
               OTHMAR
             </span>
           </button>
 
-          <div className="h-4 w-[1px] bg-black/10 mx-1" />
-
           {/* Navigation Items */}
-          <div className="flex items-center gap-0.5 md:gap-1">
+          <div className="flex items-center gap-0.5">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -90,10 +88,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
                   id={`nav-${item.id}`}
                   onClick={() => onNavigate(item.id)}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`relative px-3 py-2 rounded-full font-['Montserrat'] text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer min-h-[44px] flex items-center justify-center ${
+                  className={`relative px-3 py-1 rounded-full font-['Montserrat'] text-xs transition-all duration-150 cursor-pointer flex items-center justify-center ${
                     isActive
-                      ? 'text-white bg-[#e4281f] shadow-[0_2px_10px_rgba(228,40,31,0.35)]'
-                      : 'text-[#444] hover:text-[#1e1e1e] hover:bg-black/5'
+                      ? 'text-white bg-[#e4281f] font-semibold shadow-xs'
+                      : 'text-[#555] hover:text-[#1e1e1e] font-medium hover:bg-black/[0.04]'
                   }`}
                 >
                   {item.label}
@@ -102,30 +100,28 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
             })}
           </div>
 
-          <div className="h-4 w-[1px] bg-black/10 mx-1" />
-
-          {/* BGM Toggle Button (>=44px touch target) */}
+          {/* BGM Toggle Button */}
           <button
             id="btn-bgm-toggle"
             onClick={toggleMute}
             aria-label={isMuted ? 'Unmute background music' : 'Mute background music'}
-            className={`flex items-center justify-center min-w-[44px] min-h-[44px] rounded-full transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#e4281f] ${
+            className={`flex items-center justify-center w-7 h-7 rounded-full transition-all duration-150 cursor-pointer focus:outline-none focus:ring-1 focus:ring-[#e4281f] ml-0.5 ${
               isMuted
-                ? 'bg-black/5 text-[#888] hover:bg-black/10'
-                : 'bg-[#e4281f]/10 text-[#e4281f] hover:bg-[#e4281f]/20'
+                ? 'text-[#999] hover:text-[#1e1e1e] hover:bg-black/[0.04]'
+                : 'text-[#e4281f] hover:bg-[#e4281f]/10'
             }`}
             title={isMuted ? 'Unmute BGM' : 'Mute BGM'}
           >
             {isMuted ? (
-              <VolumeX className="w-4 h-4" />
+              <VolumeX className="w-3.5 h-3.5" />
             ) : (
               <div className="flex items-center gap-0.5">
-                <Volume2 className="w-4 h-4 animate-pulse" />
+                <Volume2 className="w-3.5 h-3.5" />
                 {isPlaying && (
-                  <span className="flex items-end gap-0.5 h-3 ml-0.5">
-                    <span className="w-0.5 h-1.5 bg-[#e4281f] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                    <span className="w-0.5 h-3 bg-[#e4281f] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                    <span className="w-0.5 h-2 bg-[#e4281f] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                  <span className="flex items-end gap-[1.5px] h-2.5 ml-0.5">
+                    <span className="w-[1.5px] h-1.5 bg-[#e4281f] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                    <span className="w-[1.5px] h-2.5 bg-[#e4281f] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                    <span className="w-[1.5px] h-2 bg-[#e4281f] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                   </span>
                 )}
               </div>
@@ -134,59 +130,59 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
         </nav>
 
         {/* MOBILE COMPACT BAR (< 768px): Logo Left, BGM + Hamburger Right */}
-        <div className="flex md:hidden w-full max-w-[440px] pointer-events-auto glass-nav px-3.5 py-1.5 rounded-full items-center justify-between shadow-[0_8px_25px_rgb(0,0,0,0.08)] border border-white/60">
+        <div className="flex md:hidden w-full max-w-[400px] pointer-events-auto backdrop-blur-md bg-white/80 px-3 py-1.5 rounded-full items-center justify-between shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-black/[0.06]">
           {/* Logo OTHMAR */}
           <button
             onClick={() => onNavigate('home')}
-            className="flex items-center gap-2 text-left focus:outline-none focus:ring-2 focus:ring-[#e4281f] rounded-full min-h-[44px] pr-2"
+            className="flex items-center gap-1.5 text-left focus:outline-none focus:ring-1 focus:ring-[#e4281f] rounded-full min-h-[36px] pr-2 cursor-pointer"
             aria-label="Go to top"
           >
-            <div className="w-6 h-6 rounded-full bg-[#e4281f] flex items-center justify-center shadow-xs">
-              <span className="text-[11px] font-black text-white leading-none">O</span>
+            <div className="w-4 h-4 rounded-full bg-[#e4281f] flex items-center justify-center">
+              <span className="text-[9px] font-black text-white leading-none">O</span>
             </div>
-            <span className="font-['Montserrat'] font-black text-sm text-[#1e1e1e] tracking-tight">
+            <span className="font-['Montserrat'] font-black text-xs text-[#1e1e1e] tracking-tight">
               OTHMAR
             </span>
           </button>
 
-          <div className="flex items-center gap-1.5">
-            {/* Mobile BGM Button (>=44x44px target) */}
+          <div className="flex items-center gap-1">
+            {/* Mobile BGM Button */}
             <button
               id="btn-bgm-toggle-mobile"
               onClick={toggleMute}
               aria-label={isMuted ? 'Unmute background music' : 'Mute background music'}
-              className={`flex items-center justify-center min-w-[44px] min-h-[44px] rounded-full transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#e4281f] ${
+              className={`flex items-center justify-center w-8 h-8 rounded-full transition-all duration-150 cursor-pointer focus:outline-none focus:ring-1 focus:ring-[#e4281f] ${
                 isMuted
-                  ? 'bg-black/5 text-[#888]'
-                  : 'bg-[#e4281f]/10 text-[#e4281f]'
+                  ? 'text-[#999] hover:text-[#1e1e1e] hover:bg-black/5'
+                  : 'text-[#e4281f] hover:bg-[#e4281f]/10'
               }`}
             >
               {isMuted ? (
-                <VolumeX className="w-4 h-4" />
+                <VolumeX className="w-3.5 h-3.5" />
               ) : (
                 <div className="flex items-center gap-0.5">
-                  <Volume2 className="w-4 h-4 animate-pulse" />
+                  <Volume2 className="w-3.5 h-3.5" />
                   {isPlaying && (
-                    <span className="flex items-end gap-0.5 h-3 ml-0.5">
-                      <span className="w-0.5 h-1.5 bg-[#e4281f] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                      <span className="w-0.5 h-3 bg-[#e4281f] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                      <span className="w-0.5 h-2 bg-[#e4281f] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                    <span className="flex items-end gap-[1.5px] h-2.5 ml-0.5">
+                      <span className="w-[1.5px] h-1.5 bg-[#e4281f] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                      <span className="w-[1.5px] h-2.5 bg-[#e4281f] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                      <span className="w-[1.5px] h-2 bg-[#e4281f] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                     </span>
                   )}
                 </div>
               )}
             </button>
 
-            {/* Hamburger Button (>=44x44px target) */}
+            {/* Hamburger Button */}
             <button
               id="btn-mobile-menu-toggle"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-nav-drawer"
               aria-label="Open navigation menu"
-              className="flex items-center justify-center min-w-[44px] min-h-[44px] rounded-full bg-black/5 text-[#1e1e1e] hover:bg-black/10 active:scale-95 transition-all focus:outline-none focus:ring-2 focus:ring-[#e4281f]"
+              className="flex items-center justify-center w-8 h-8 rounded-full text-[#1e1e1e] hover:bg-black/5 active:scale-95 transition-all focus:outline-none focus:ring-1 focus:ring-[#e4281f] cursor-pointer"
             >
-              <Menu className="w-5 h-5" />
+              <Menu className="w-4 h-4" />
             </button>
           </div>
         </div>
