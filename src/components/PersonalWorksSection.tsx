@@ -1,27 +1,42 @@
 import React from 'react';
+import { useSectionReveal } from '../hooks/useSectionReveal';
 
-export const PersonalWorksSection: React.FC = () => {
+interface PersonalWorksSectionProps {
+  activeSection?: string;
+}
+
+export const PersonalWorksSection: React.FC<PersonalWorksSectionProps> = ({ activeSection = '' }) => {
+  const containerRef = useSectionReveal<HTMLElement>({
+    sectionId: 'works',
+    activeSection,
+    stagger: 0.1,
+    yOffset: 40,
+  });
+
   return (
-    <section id="works" className="relative w-full lg:w-[1440px] min-h-0 lg:h-[1782px] pt-14 sm:pt-20 lg:pt-[60px] pb-12 lg:pb-0 select-none overflow-visible px-4 sm:px-8 lg:px-0">
+    <section
+      id="works"
+      ref={containerRef}
+      className="relative w-full lg:w-[1440px] min-h-0 lg:h-[1782px] pt-20 sm:pt-28 lg:pt-[95px] pb-20 sm:pb-28 lg:pb-0 overflow-visible px-4 sm:px-8 lg:px-0 scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
+    >
       {/* Mobile-Only Atmospheric Gradient Blobs */}
       <div className="lg:hidden absolute -left-[70px] top-[180px] w-[220px] h-[220px] rounded-full pointer-events-none opacity-35 blur-[28px] bg-[radial-gradient(ellipse_at_center,rgba(8,47,186,0.45)_0%,transparent_70%)] z-0" aria-hidden="true" />
       <div className="lg:hidden absolute -right-[70px] top-[480px] w-[240px] h-[240px] rounded-full pointer-events-none opacity-35 blur-[28px] bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.45)_0%,transparent_70%)] z-0" aria-hidden="true" />
 
       {/* 3D Laughing Emoji (Figma node 51:340: mentok ke kanan, sebagian masuk, authentic depth-of-field blur) */}
       <div 
-        className="absolute -right-[70px] sm:-right-[90px] lg:-right-[150px] top-[130px] sm:top-[160px] lg:top-[185px] z-10 w-[220px] sm:w-[300px] lg:w-[420px] aspect-square pointer-events-none select-none"
+        className="reveal-item gpu-blur absolute -right-[70px] sm:-right-[90px] lg:-right-[150px] top-[165px] sm:top-[195px] lg:top-[220px] z-10 w-[220px] sm:w-[300px] lg:w-[420px] aspect-square pointer-events-none select-none"
         title="3D Laughing Emoji"
       >
         <img
           src="/assets/figma/dc1f25b1ca5028e9551c5a11fc58f1b2fe487ab5.png"
           alt="3D Laughing Emoji"
-          className="w-full h-full object-contain blur-[8px] sm:blur-[10px] lg:blur-[14px] drop-shadow-[0_16px_32px_rgba(0,0,0,0.18)]"
-          style={{ filter: 'blur(14px) drop-shadow(0 16px 32px rgba(0,0,0,0.18))' }}
+          className="w-full h-full object-contain filter blur-[14px] drop-shadow-[0_16px_32px_rgba(0,0,0,0.18)]"
         />
       </div>
 
       {/* Title: Pers●nal W●rks with authentic badges replacing 'o's (Figma node 50:286) */}
-      <div className="relative mb-8 sm:mb-12 lg:mb-[65px] text-center select-none">
+      <div className="reveal-item relative mb-8 sm:mb-12 lg:mb-[65px] text-center">
         <h2 className="font-['Montserrat'] font-black text-[clamp(28px,7.5vw,96px)] text-[#1e1e1e] tracking-tight inline-flex items-baseline justify-center leading-none flex-wrap">
           <span>Pers</span>
           
@@ -53,7 +68,7 @@ export const PersonalWorksSection: React.FC = () => {
 
       {/* Dashed Timeline Line: Left on mobile (20px/24px), centered on desktop (720px) */}
       <div 
-        className="absolute left-[20px] sm:left-[24px] lg:left-[720px] -translate-x-1/2 top-[140px] sm:top-[160px] lg:top-[215px] bottom-12 lg:bottom-auto lg:h-[1140px] w-[6px] pointer-events-none z-0"
+        className="absolute left-[20px] sm:left-[24px] lg:left-[720px] -translate-x-1/2 top-[175px] sm:top-[195px] lg:top-[250px] bottom-12 lg:bottom-auto lg:h-[1140px] w-[6px] pointer-events-none z-0"
       >
         <svg className="w-full h-full" preserveAspectRatio="none">
           <line
@@ -73,7 +88,7 @@ export const PersonalWorksSection: React.FC = () => {
       <div className="relative w-full max-w-xl lg:max-w-none mx-auto flex flex-col gap-8 sm:gap-12 lg:gap-[75px] z-10">
 
         {/* ITEM 1: Street Photography */}
-        <div className="relative w-full">
+        <div className="reveal-item relative w-full">
           {/* Category Header */}
           <div className="relative w-full h-[36px] sm:h-[44px] flex items-center mb-3 sm:mb-[16px]">
             {/* Bullet Dot: perfectly centered on top of the dashed line (z-10) */}
@@ -107,7 +122,7 @@ export const PersonalWorksSection: React.FC = () => {
         </div>
 
         {/* ITEM 2: Wedding Photography */}
-        <div className="relative w-full">
+        <div className="reveal-item relative w-full">
           {/* Category Header */}
           <div className="relative w-full h-[36px] sm:h-[44px] flex items-center mb-3 sm:mb-[16px]">
             {/* Bullet Dot: perfectly centered on top of the dashed line (z-10) */}
@@ -141,7 +156,7 @@ export const PersonalWorksSection: React.FC = () => {
         </div>
 
         {/* ITEM 3: Sketching & Drawing */}
-        <div className="relative w-full">
+        <div className="reveal-item relative w-full">
           {/* Category Header */}
           <div className="relative w-full h-[36px] sm:h-[44px] flex items-center mb-3 sm:mb-[16px]">
             {/* Bullet Dot: perfectly centered on top of the dashed line (z-10) */}
@@ -175,7 +190,7 @@ export const PersonalWorksSection: React.FC = () => {
         </div>
 
         {/* ITEM 4: 3D Animation Project */}
-        <div className="relative w-full">
+        <div className="reveal-item relative w-full">
           {/* Category Header */}
           <div className="relative w-full h-[36px] sm:h-[44px] flex items-center mb-3 sm:mb-[16px]">
             {/* Bullet Dot: perfectly centered on top of the dashed line (z-10) */}

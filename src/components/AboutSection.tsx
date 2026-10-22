@@ -1,11 +1,23 @@
 import React from 'react';
+import { useSectionReveal } from '../hooks/useSectionReveal';
 
-export const AboutSection: React.FC = () => {
+interface AboutSectionProps {
+  activeSection?: string;
+}
+
+export const AboutSection: React.FC<AboutSectionProps> = ({ activeSection = '' }) => {
+  const containerRef = useSectionReveal<HTMLElement>({
+    sectionId: 'about',
+    activeSection,
+    stagger: 0.1,
+    yOffset: 40,
+  });
+
   const experiences = [
     {
-      title: 'Intrenship', // Exact typo from Figma
+      title: 'Internship',
       period: 'Sep - Aug 2026',
-      role: 'PT Digital Indonesia Hebat As Software Enginere', // Exact typo from Figma
+      role: 'PT Digital Indonesia Hebat as Software Engineer',
     },
     {
       title: 'Freelance',
@@ -25,23 +37,27 @@ export const AboutSection: React.FC = () => {
     {
       title: 'Basketball Club Executive',
       period: 'Sep - Nov 2024',
-      role: 'Head Of Creative Division',
+      role: 'Head of Creative Division',
     },
     {
       title: '4C National Competition',
       period: 'Sep - Nov 2024',
-      role: 'Participants in the ICT Business Sector',
+      role: 'Participant in the ICT Business Sector',
     },
   ];
 
   return (
-    <section id="about" className="relative w-full lg:w-[1440px] min-h-0 lg:h-[1340px] pt-14 sm:pt-20 lg:pt-[60px] px-4 sm:px-8 lg:px-[100px] isolate overflow-x-clip">
+    <section
+      id="about"
+      ref={containerRef}
+      className="relative w-full lg:w-[1440px] min-h-0 lg:h-[1340px] pt-20 sm:pt-28 lg:pt-[95px] pb-20 sm:pb-28 lg:pb-0 px-4 sm:px-8 lg:px-[100px] isolate overflow-x-clip scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
+    >
       <div className="w-full flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-8 items-start relative z-10 max-w-xl lg:max-w-none mx-auto">
         
         {/* LEFT COLUMN in Desktop, promotes children as direct flex items in mobile via contents */}
         <div className="contents lg:col-span-7 lg:flex lg:flex-col lg:gap-9 lg:w-[675px]">
           {/* 1. Header intro: sapaan + nama + deskripsi (Mobile Order 1) */}
-          <div className="order-1 lg:order-none flex flex-col gap-2 sm:gap-3 w-full">
+          <div className="reveal-item order-1 lg:order-none flex flex-col gap-2 sm:gap-3 w-full">
             <p className="font-['Helvetica_Neue',Helvetica,sans-serif] text-[clamp(18px,4.5vw,32px)] text-[#1e1e1e] leading-snug">
               <span className="font-light">Hello, Everyone</span>{' '}
               <span className="font-bold">I’m</span>
@@ -50,16 +66,16 @@ export const AboutSection: React.FC = () => {
               M.OTHMAR SAFARAZ
             </h2>
             <p className="font-['Helvetica_Neue',Helvetica,sans-serif] font-light text-[clamp(14px,3.5vw,24px)] text-[#1e1e1e] mb-2">
-              Information Technology student in Politeknik Caltex Riau
+              Information Technology student at Politeknik Caltex Riau
             </p>
             {/* Bio paragraph: text-left on mobile for comfort, justified on desktop */}
             <p className="font-['Helvetica_Neue',Helvetica,sans-serif] font-light text-[clamp(14px,3.5vw,24px)] text-[#1e1e1e] leading-[1.6] lg:leading-[1.5] text-left lg:text-justify w-full lg:w-[675px]">
-              I am an active Information Technology student with a genuine passion for the creative arts. Alongside my technical studies, I enjoy exploring design, illustration, and photography always looking for ways to blend technology with creativity to bring ideas to life.
+              I am an active Information Technology student with a genuine passion for the creative arts. Alongside my technical studies, I enjoy exploring design, illustration, and photography, always looking for ways to blend technology with creativity to bring ideas to life.
             </p>
           </div>
 
           {/* 3. Experience list (Mobile Order 3) */}
-          <div className="order-3 lg:order-none flex flex-col w-full mt-2 lg:mt-0">
+          <div className="reveal-item order-3 lg:order-none flex flex-col w-full mt-2 lg:mt-0">
             <h3 className="font-['Helvetica_Neue',Helvetica,sans-serif] font-bold text-[clamp(26px,6vw,42px)] text-[#1e1e1e] mb-4 lg:mb-6">
               Experience
             </h3>
@@ -88,7 +104,7 @@ export const AboutSection: React.FC = () => {
           </div>
 
           {/* 6. Software Icons (Mobile Order 6) */}
-          <div className="order-6 lg:order-none flex flex-col w-full mt-2 lg:mt-0">
+          <div className="reveal-item order-6 lg:order-none flex flex-col w-full mt-2 lg:mt-0">
             <h3 className="font-['Helvetica_Neue',Helvetica,sans-serif] font-bold text-[clamp(26px,6vw,42px)] text-[#1e1e1e] mb-4 lg:mb-5">
               Software
             </h3>
@@ -130,7 +146,7 @@ export const AboutSection: React.FC = () => {
         <div className="contents lg:col-span-5 lg:flex lg:flex-col lg:items-end lg:pr-4 lg:gap-10">
           
           {/* 2. Polaroid Photo Frame with stickers (Mobile Order 2) */}
-          <div className="order-2 lg:order-none relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[530px] mx-auto lg:mx-0 pt-10 sm:pt-14 pb-4">
+          <div className="reveal-item order-2 lg:order-none relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[530px] mx-auto lg:mx-0 pt-10 sm:pt-14 pb-4">
             {/* Main White Polaroid Card */}
             <div className="relative bg-white p-4 sm:p-6 pb-7 sm:pb-9 shadow-[1px_6px_20.2px_rgba(0,0,0,0.25)] rotate-[-1.32deg] rounded-sm transition-transform duration-500 hover:rotate-0">
               
@@ -210,7 +226,7 @@ export const AboutSection: React.FC = () => {
           </div>
 
           {/* 4. Education (Mobile Order 4) */}
-          <div className="order-4 lg:order-none w-full lg:w-[472px] flex flex-col gap-1.5 mt-2 lg:mt-2">
+          <div className="reveal-item order-4 lg:order-none w-full lg:w-[472px] flex flex-col gap-1.5 mt-2 lg:mt-2">
             <h3 className="font-['Helvetica_Neue',Helvetica,sans-serif] font-bold text-[clamp(26px,6vw,42px)] text-[#1e1e1e] mb-2 sm:mb-3">
               Education
             </h3>
@@ -235,7 +251,7 @@ export const AboutSection: React.FC = () => {
           </div>
 
           {/* 5. Contact (Mobile Order 5) */}
-          <div className="order-5 lg:order-none relative w-full lg:w-[472px] flex flex-col gap-3 sm:gap-4 mt-2">
+          <div className="reveal-item order-5 lg:order-none relative w-full lg:w-[472px] flex flex-col gap-3 sm:gap-4 mt-2">
             <h3 className="font-['Helvetica_Neue',Helvetica,sans-serif] font-bold text-[clamp(26px,6vw,42px)] text-[#1e1e1e] mb-2 sm:mb-3">
               Contact
             </h3>

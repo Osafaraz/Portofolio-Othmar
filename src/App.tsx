@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AudioProvider } from './context/AudioContext';
-import { IntroScreen } from './components/IntroScreen';
+import { LogoIntroLoader } from './components/LogoIntroLoader';
 import { Navbar } from './components/Navbar';
 import { SectionTransition } from './components/SectionTransition';
 import { HeroSection } from './components/HeroSection';
@@ -34,12 +34,13 @@ export const AppContent: React.FC = () => {
   // B1: >=1440px scale is locked to 1 (centered, no enlargement at 1920px); 1024-1439px scaled proportionally; <1024px fluid mobile
   const scale = isScaleDesktop ? windowWidth / 1440 : 1;
 
-  // IntersectionObserver to track active section while scrolling
+  // Track active section while scrolling with optimal viewport threshold
   useEffect(() => {
     const sectionIds = ['home', 'about', 'pcr-cup', 'jti-expo', '4c', 'works', 'contact'];
     const handleScroll = () => {
       if (isTransitioning) return;
-      const scrollPosition = window.scrollY + window.innerHeight * 0.35;
+      // 0.52 threshold triggers reveal animation precisely when the section enters the viewer's focal area
+      const scrollPosition = window.scrollY + window.innerHeight * 0.52;
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {
         const id = sectionIds[i];
@@ -68,19 +69,19 @@ export const AppContent: React.FC = () => {
 
     setIsTransitioning(true);
 
-    // After 350ms (sweep is covering screen), jump/scroll to target section
+    // After 520ms (logos have converged at center and screen is covered), jump/scroll to target section
     setTimeout(() => {
       const el = document.getElementById(sectionId);
       if (el) {
         el.scrollIntoView({ behavior: 'auto' });
         setActiveSection(sectionId);
       }
-    }, 380);
+    }, 520);
 
-    // End transition sweep after 800ms total
+    // End transition after logos burst outward and screen reveals target section
     setTimeout(() => {
       setIsTransitioning(false);
-    }, 850);
+    }, 1280);
   };
 
   return (
@@ -92,9 +93,9 @@ export const AppContent: React.FC = () => {
           : '100svh',
       }}
     >
-      {/* Intro Modal Screen */}
+      {/* Dynamic Software Logo Intro Loader */}
       {!hasEntered && (
-        <IntroScreen onEnter={() => setHasEntered(true)} />
+        <LogoIntroLoader onComplete={() => setHasEntered(true)} />
       )}
 
       {/* Fixed Navbar */}
@@ -186,12 +187,12 @@ export const AppContent: React.FC = () => {
           {/* Main Single-Page Portfolio Content (Exact 1440px Dimensions) */}
           <main className="w-[1440px] relative z-10">
             <HeroSection isEntered={hasEntered} />
-            <AboutSection />
-            <PcrCupSection />
-            <JtiExpoSection />
-            <Competition4CSection />
-            <PersonalWorksSection />
-            <ContactSection />
+            <AboutSection activeSection={activeSection} />
+            <PcrCupSection activeSection={activeSection} />
+            <JtiExpoSection activeSection={activeSection} />
+            <Competition4CSection activeSection={activeSection} />
+            <PersonalWorksSection activeSection={activeSection} />
+            <ContactSection activeSection={activeSection} />
           </main>
         </div>
       ) : (
@@ -199,12 +200,12 @@ export const AppContent: React.FC = () => {
         <div className="relative w-full overflow-x-clip z-10 flex flex-col items-center">
           <main className="w-full max-w-[100vw] relative z-10 flex flex-col">
             <HeroSection isEntered={hasEntered} />
-            <AboutSection />
-            <PcrCupSection />
-            <JtiExpoSection />
-            <Competition4CSection />
-            <PersonalWorksSection />
-            <ContactSection />
+            <AboutSection activeSection={activeSection} />
+            <PcrCupSection activeSection={activeSection} />
+            <JtiExpoSection activeSection={activeSection} />
+            <Competition4CSection activeSection={activeSection} />
+            <PersonalWorksSection activeSection={activeSection} />
+            <ContactSection activeSection={activeSection} />
           </main>
         </div>
       )}

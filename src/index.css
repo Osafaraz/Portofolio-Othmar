@@ -167,6 +167,22 @@ body {
   transform: scale(1.08) rotate(3deg);
 }
 
+/* GPU hardware acceleration for reveal items to prevent stutter / frame drops */
+.reveal-item {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* GPU raster cache for blurred depth-of-field elements */
+.gpu-blur {
+  transform: translateZ(0);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {

@@ -1,6 +1,18 @@
 import React from 'react';
+import { useSectionReveal } from '../hooks/useSectionReveal';
 
-export const Competition4CSection: React.FC = () => {
+interface Competition4CSectionProps {
+  activeSection?: string;
+}
+
+export const Competition4CSection: React.FC<Competition4CSectionProps> = ({ activeSection = '' }) => {
+  const containerRef = useSectionReveal<HTMLElement>({
+    sectionId: '4c',
+    activeSection,
+    stagger: 0.1,
+    yOffset: 40,
+  });
+
   const arvanaScreens = [
     { src: '/assets/figma/6ee24a76cf9721a90e784c702b5cb34444d1a928.png', title: 'Landing Page', width: '228px' },
     { src: '/assets/figma/6b7fbc013f755d1e05c1163db2853b59d45151f6.png', title: 'Home', width: '229px' },
@@ -10,7 +22,11 @@ export const Competition4CSection: React.FC = () => {
   ];
 
   return (
-    <section id="4c" className="relative w-full lg:w-[1440px] min-h-0 lg:h-[1405px] pt-14 sm:pt-20 lg:pt-[70px] px-4 sm:px-8 lg:px-[84.5px] select-none overflow-x-clip">
+    <section
+      id="4c"
+      ref={containerRef}
+      className="relative w-full lg:w-[1440px] min-h-0 lg:h-[1405px] pt-20 sm:pt-28 lg:pt-[95px] pb-20 sm:pb-28 lg:pb-0 px-4 sm:px-8 lg:px-[84.5px] overflow-x-clip scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
+    >
       {/* Mobile-Only Atmospheric Gradient Blob */}
       <div className="lg:hidden absolute -left-[80px] top-[120px] w-[240px] h-[240px] rounded-full pointer-events-none opacity-40 blur-[28px] bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.45)_0%,transparent_70%)] z-0" aria-hidden="true" />
 
@@ -21,7 +37,7 @@ export const Competition4CSection: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-0 mb-8 lg:mb-[80px]">
           
           {/* TEXT & INFO (Mobile Order 1, Desktop Right) */}
-          <div className="order-1 lg:order-2 w-full lg:w-[608px] flex flex-col justify-center">
+          <div className="reveal-item order-1 lg:order-2 w-full lg:w-[608px] flex flex-col justify-center">
             <div className="mb-4 sm:mb-[24px]">
               <h2 className="font-['Montserrat'] font-black text-[clamp(44px,9vw,96px)] text-[#1e1e1e] leading-[1.05] tracking-tight">
                 4C National
@@ -31,15 +47,15 @@ export const Competition4CSection: React.FC = () => {
               </p>
             </div>
 
-            <p className="font-['Helvetica',sans-serif] font-light text-[clamp(14px,3.6vw,24px)] text-[#1e1e1e] leading-[1.6] lg:leading-[1.5] text-left lg:text-justify w-full lg:w-[602px]">
+            <p className="font-['Helvetica_Neue',Helvetica,Arial,sans-serif] font-light text-[clamp(14px,3.6vw,24px)] text-[#1e1e1e] leading-[1.6] lg:leading-[1.65] text-left select-text cursor-text w-full lg:w-[602px]">
               4C National Competition is a national-level ICT business competition open to university students across Indonesia.{' '}
-              <span className="font-bold">As a team member</span>
-              , I contributed to developing the competition concept and business idea, designing a high-fidelity UI/UX prototype of a mobile application called ARVANA a virtual optical store platform that allows users to try and purchase eyewear online. I was also responsible for building the interactive prototype to demonstrate the product's core features and user flow.
+              <span className="font-bold">As a team member,</span>{' '}
+              I contributed to developing the competition concept and business idea, designing a high-fidelity UI/UX prototype of a mobile application called ARVANA, a virtual optical store platform that allows users to try and purchase eyewear online. I was also responsible for building the interactive prototype to demonstrate the product's core features and user flow.
             </p>
           </div>
 
           {/* TWO PHONES MOCKUP CLUSTER (Mobile Order 2, Desktop Left) */}
-          <div className="order-2 lg:order-1 relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-none lg:w-[650px] aspect-[650/550] lg:h-[550px] shrink-0 mx-auto my-4 lg:my-0 select-none">
+          <div className="reveal-item order-2 lg:order-1 relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-none lg:w-[650px] aspect-[650/550] lg:h-[550px] shrink-0 mx-auto my-4 lg:my-0 select-none">
             {/* Shadow Ellipse 28 (Left Phone) - Tucked closely beneath left phone base */}
             <div className="absolute left-[27%] top-[75%] w-[29%] h-[13.5%] -rotate-[14.77deg] pointer-events-none opacity-85">
               <img src="/assets/figma/087d57adbfb713ffa5e6a92f13ff3519f014407a.svg" alt="" className="w-full h-full" />
@@ -87,7 +103,7 @@ export const Competition4CSection: React.FC = () => {
             {arvanaScreens.map((screen, idx) => (
               <div
                 key={idx}
-                className="w-[185px] sm:w-[215px] lg:w-[228px] h-[390px] sm:h-[460px] lg:h-[494px] shrink-0 snap-start rounded-[10px] overflow-hidden shadow-[0px_7px_13.3px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:shadow-[0px_16px_28px_rgba(0,0,0,0.3)] transition-all duration-300 group cursor-pointer bg-white"
+                className="reveal-item w-[185px] sm:w-[215px] lg:w-[228px] h-[390px] sm:h-[460px] lg:h-[494px] shrink-0 snap-start rounded-[10px] overflow-hidden shadow-[0px_7px_13.3px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:shadow-[0px_16px_28px_rgba(0,0,0,0.3)] transition-all duration-300 group cursor-pointer bg-white"
                 title={screen.title}
               >
                 <img

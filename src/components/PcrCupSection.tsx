@@ -1,6 +1,18 @@
 import React from 'react';
+import { useSectionReveal } from '../hooks/useSectionReveal';
 
-export const PcrCupSection: React.FC = () => {
+interface PcrCupSectionProps {
+  activeSection?: string;
+}
+
+export const PcrCupSection: React.FC<PcrCupSectionProps> = ({ activeSection = '' }) => {
+  const containerRef = useSectionReveal<HTMLElement>({
+    sectionId: 'pcr-cup',
+    activeSection,
+    stagger: 0.1,
+    yOffset: 40,
+  });
+
   const matchPosters = [
     { src: '/assets/figma/5255b2593fe368934785928b8cd87abc89a46105.png', alt: 'Full Time Match 5', w: 234, h: 292 },
     { src: '/assets/figma/4de823950b42a34629bc52cae2671ff36e83a660.png', alt: 'Half Time Match 5', w: 234, h: 292 },
@@ -10,7 +22,11 @@ export const PcrCupSection: React.FC = () => {
   ];
 
   return (
-    <section id="pcr-cup" className="relative w-full lg:w-[1440px] min-h-0 lg:h-[1150px] pt-14 sm:pt-20 lg:pt-[70px] px-4 sm:px-8 lg:px-[88px] isolate overflow-x-clip">
+    <section
+      id="pcr-cup"
+      ref={containerRef}
+      className="relative w-full lg:w-[1440px] min-h-0 lg:h-[1150px] pt-20 sm:pt-28 lg:pt-[95px] pb-20 sm:pb-28 lg:pb-0 px-4 sm:px-8 lg:px-[88px] isolate overflow-x-clip scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
+    >
       {/* Mobile-Only Atmospheric Gradient Blob */}
       <div className="lg:hidden absolute -right-[90px] top-[40px] w-[240px] h-[240px] rounded-full pointer-events-none opacity-40 blur-[28px] bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.5)_0%,transparent_70%)] z-0" aria-hidden="true" />
 
@@ -21,7 +37,7 @@ export const PcrCupSection: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-0 mb-8">
           
           {/* TEXT & INFO (Mobile Order 1, Desktop Right) */}
-          <div className="order-1 lg:order-2 w-full lg:w-[536px] flex flex-col gap-4 sm:gap-6">
+          <div className="reveal-item order-1 lg:order-2 w-full lg:w-[536px] flex flex-col gap-4 sm:gap-6">
             <div>
               <h2 className="font-['Montserrat'] font-black text-[clamp(44px,9vw,96px)] text-[#1e1e1e] leading-[0.95] tracking-tight">
                 PCR CUP
@@ -50,8 +66,8 @@ export const PcrCupSection: React.FC = () => {
               </span>
             </a>
 
-            {/* Description: Left-aligned on mobile, justified on desktop */}
-            <p className="font-['Helvetica_Neue',Helvetica,sans-serif] font-light text-[clamp(14px,3.6vw,24px)] text-[#1e1e1e] leading-[1.6] lg:leading-[1.55] text-left lg:text-justify w-full lg:w-[536px]">
+            {/* Description */}
+            <p className="font-['Helvetica_Neue',Helvetica,sans-serif] font-light text-[clamp(14px,3.6vw,24px)] text-[#1e1e1e] leading-[1.6] lg:leading-[1.65] text-left select-text cursor-text w-full lg:w-[536px]">
               PCR Cup Basketball 2025 is an inter-departmental basketball competition held on campus, bringing together student associations to compete in an exciting tournament.{' '}
               <span className="font-bold">As the Documentation Division Coordinator,</span>{' '}
               I was responsible for managing the event's social media presence, designing visual assets and promotional materials, and capturing photos throughout the matches to document every moment of the competition.
@@ -59,10 +75,10 @@ export const PcrCupSection: React.FC = () => {
           </div>
 
           {/* ASSET CLUSTER: Phone, Flyer, T-Shirt, Photo Card, Emoji (Mobile Order 2, Desktop Left) */}
-          <div className="order-2 lg:order-1 relative w-full max-w-[340px] sm:max-w-[440px] lg:max-w-none lg:w-[650px] aspect-[650/600] lg:h-[600px] shrink-0 mx-auto select-none">
+          <div className="reveal-item order-2 lg:order-1 relative w-full max-w-[340px] sm:max-w-[440px] lg:max-w-none lg:w-[650px] aspect-[650/600] lg:h-[600px] shrink-0 mx-auto select-none">
             
             {/* 1. 3D Heart-Eyes Emoji (Blurred foreground bokeh, shifted to the far left as in Figma) */}
-            <div className="absolute -left-[14%] sm:-left-[16%] lg:-left-[18%] -top-[4%] sm:-top-[5%] z-30 w-[28%] sm:w-[30%] lg:w-[30.8%] aspect-square rotate-[20.95deg] pointer-events-none select-none">
+            <div className="gpu-blur absolute -left-[14%] sm:-left-[16%] lg:-left-[18%] -top-[4%] sm:-top-[5%] z-30 w-[28%] sm:w-[30%] lg:w-[30.8%] aspect-square rotate-[20.95deg] pointer-events-none select-none">
               <img
                 src="/assets/figma/f13d290a29579d7d0f26c057eb813be5e8b6b62d.png"
                 alt="3D Heart-Eyes Emoji"
@@ -156,7 +172,7 @@ export const PcrCupSection: React.FC = () => {
             {matchPosters.map((poster, idx) => (
               <div
                 key={idx}
-                className="w-[185px] sm:w-[220px] lg:w-[234px] aspect-[234/292] shrink-0 snap-start rounded-[10px] overflow-hidden shadow-[0px_6px_16px_rgba(0,0,0,0.18)] hover:-translate-y-2 hover:shadow-[0px_14px_28px_rgba(0,0,0,0.26)] transition-all duration-300 cursor-pointer bg-white"
+                className="reveal-item w-[185px] sm:w-[220px] lg:w-[234px] aspect-[234/292] shrink-0 snap-start rounded-[10px] overflow-hidden shadow-[0px_6px_16px_rgba(0,0,0,0.18)] hover:-translate-y-2 hover:shadow-[0px_14px_28px_rgba(0,0,0,0.26)] transition-all duration-300 cursor-pointer bg-white"
               >
                 <img
                   src={poster.src}
