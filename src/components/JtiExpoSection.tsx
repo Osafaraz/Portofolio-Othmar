@@ -17,7 +17,7 @@ export const JtiExpoSection: React.FC<JtiExpoSectionProps> = ({ activeSection = 
     <section
       id="jti-expo"
       ref={containerRef}
-      className="relative z-20 w-full lg:w-[1440px] min-h-0 lg:h-[960px] pt-20 sm:pt-28 lg:pt-[95px] pb-20 sm:pb-28 lg:pb-0 px-4 sm:px-8 lg:px-[88px] overflow-visible scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
+      className="relative z-20 w-full lg:w-[1440px] min-h-0 lg:h-[1160px] pt-24 sm:pt-32 lg:pt-[120px] pb-24 sm:pb-32 lg:pb-[100px] px-4 sm:px-8 lg:px-[88px] overflow-visible scroll-mt-0"
     >
       {/* Mobile-Only Atmospheric Gradient Blob */}
       <div className="lg:hidden absolute -right-[80px] top-[100px] w-[240px] h-[240px] rounded-full pointer-events-none opacity-35 blur-[28px] bg-[radial-gradient(ellipse_at_center,rgba(8,47,186,0.5)_0%,transparent_70%)] z-0" aria-hidden="true" />

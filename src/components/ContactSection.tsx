@@ -17,7 +17,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ activeSection = 
     <footer
       id="contact"
       ref={containerRef}
-      className="relative w-full lg:w-[1440px] min-h-0 lg:h-[853px] flex flex-col items-center text-center pt-20 sm:pt-28 lg:pt-[100px] pb-24 sm:pb-32 lg:pb-0 px-4 sm:px-6 overflow-x-clip scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
+      className="relative w-full lg:w-[1440px] min-h-0 lg:h-[950px] flex flex-col items-center text-center pt-24 sm:pt-32 lg:pt-[120px] pb-28 sm:pb-36 lg:pb-[100px] px-4 sm:px-6 overflow-x-clip scroll-mt-0"
     >
       {/* Mobile-Only Atmospheric Gradient Blobs */}
       <div className="lg:hidden absolute -right-[80px] top-[40px] w-[240px] h-[240px] rounded-full pointer-events-none opacity-35 blur-[28px] bg-[radial-gradient(ellipse_at_center,rgba(8,47,186,0.45)_0%,transparent_70%)] z-0" aria-hidden="true" />

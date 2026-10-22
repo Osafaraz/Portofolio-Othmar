@@ -25,7 +25,7 @@ export const PcrCupSection: React.FC<PcrCupSectionProps> = ({ activeSection = ''
     <section
       id="pcr-cup"
       ref={containerRef}
-      className="relative w-full lg:w-[1440px] min-h-0 lg:h-[1150px] pt-20 sm:pt-28 lg:pt-[95px] pb-20 sm:pb-28 lg:pb-0 px-4 sm:px-8 lg:px-[88px] isolate overflow-x-clip scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
+      className="relative w-full lg:w-[1440px] min-h-0 lg:h-[1350px] pt-24 sm:pt-32 lg:pt-[120px] pb-24 sm:pb-32 lg:pb-[100px] px-4 sm:px-8 lg:px-[88px] isolate overflow-x-clip scroll-mt-0"
     >
       {/* Mobile-Only Atmospheric Gradient Blob */}
       <div className="lg:hidden absolute -right-[90px] top-[40px] w-[240px] h-[240px] rounded-full pointer-events-none opacity-40 blur-[28px] bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.5)_0%,transparent_70%)] z-0" aria-hidden="true" />

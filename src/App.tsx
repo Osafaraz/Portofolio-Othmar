@@ -89,7 +89,7 @@ export const AppContent: React.FC = () => {
       className="relative w-full bg-[#f4f7f4] bg-grid-lines text-[#1e1e1e] selection:bg-[#e4281f] selection:text-white overflow-x-clip"
       style={{
         minHeight: isDesktop
-          ? (isScaleDesktop ? `${8210 * scale}px` : '8210px')
+          ? (isScaleDesktop ? `${9310 * scale}px` : '9310px')
           : '100svh',
       }}
     >
@@ -114,14 +114,14 @@ export const AppContent: React.FC = () => {
           className="absolute left-1/2 top-0 pointer-events-auto"
           style={{
             width: '1440px',
-            height: '8210px',
+            height: '9310px',
             transform: isScaleDesktop ? `translateX(-50%) scale(${scale})` : 'translateX(-50%)',
             transformOrigin: 'top center',
           }}
         >
           {/* Unified Continuous Full-Height Background Layer (Figma A2 Grid & A3 Blobs) */}
           <div
-            className="absolute inset-0 w-[1440px] h-[8210px] pointer-events-none z-0 overflow-visible"
+            className="absolute inset-0 w-[1440px] h-[9310px] pointer-events-none z-0 overflow-visible"
             aria-hidden="true"
           >
             {/* 1. Hero Left Royal Blue (Figma 5:132) - Seamless Radial Gradient without bounding box cutoff */}
@@ -139,47 +139,47 @@ export const AppContent: React.FC = () => {
             </div>
 
             {/* 3. PCR Cup Right Warm Orange (Figma 40:172) */}
-            <div className="absolute left-[880px] top-[2070px] w-[838.9px] h-[585px]">
+            <div className="absolute left-[880px] top-[2280px] w-[838.9px] h-[585px]">
               <img src="/assets/figma/51650e12432bf9c9091322ea9b2a77c14fc67f37.svg" alt="" className="w-full h-full object-contain" />
             </div>
 
             {/* 4. PCR Gallery Left Royal Blue (Figma 51:356) */}
-            <div className="absolute left-[-150px] top-[2850px] w-[370.1px] h-[448px]">
+            <div className="absolute left-[-150px] top-[3060px] w-[370.1px] h-[448px]">
               <img src="/assets/figma/2916968902335ff882f14e86d44f058a619f0245.svg" alt="" className="w-full h-full object-contain" />
             </div>
 
             {/* 5. JTI Expo Right Royal Blue (Figma 51:355) */}
-            <div className="absolute left-[1050px] top-[3325px] w-[518px] h-[566px]">
+            <div className="absolute left-[1050px] top-[3735px] w-[518px] h-[566px]">
               <img src="/assets/figma/7b85e89bcf23dbfdf297f07a010b3578f06d5f2a.svg" alt="" className="w-full h-full object-contain" />
             </div>
 
             {/* 6. 4C Center-Left Warm Orange (Figma 46:69) */}
-            <div className="absolute left-[-50px] top-[4340px] w-[889px] h-[620px]">
+            <div className="absolute left-[-50px] top-[4950px] w-[889px] h-[620px]">
               <img src="/assets/figma/ccd6d4e6a49370d031a8967c2623ebf954bb1476.svg" alt="" className="w-full h-full object-contain" />
             </div>
 
             {/* 7. 4C ARVANA Right Royal Blue (Figma 51:357) */}
-            <div className="absolute left-[1050px] top-[4850px] w-[518px] h-[566px]">
+            <div className="absolute left-[1050px] top-[5460px] w-[518px] h-[566px]">
               <img src="/assets/figma/26ea40880866eb8ed3c621b98bec53a330e08ca5.svg" alt="" className="w-full h-full object-contain" />
             </div>
 
             {/* 8. Personal Works Left Royal Blue (Figma 51:358) */}
-            <div className="absolute left-[-100px] top-[5642px] w-[518px] h-[566px]">
+            <div className="absolute left-[-100px] top-[6447px] w-[518px] h-[566px]">
               <img src="/assets/figma/9aaa3518eebb968bfbc44bef4b12c98eb96a482c.svg" alt="" className="w-full h-full object-contain" />
             </div>
 
             {/* 9. Personal Works Right Warm Orange (Figma 51:316) */}
-            <div className="absolute left-[850px] top-[5788px] w-[1119.8px] h-[815.2px]">
+            <div className="absolute left-[850px] top-[6593px] w-[1119.8px] h-[815.2px]">
               <img src="/assets/figma/6619d3aa88e06b5df4fd2c294c35bdb316cb613e.svg" alt="" className="w-full h-full object-contain" />
             </div>
 
             {/* 10. Thanks Right Royal Blue (Figma 85:67) */}
-            <div className="absolute left-[1135.5px] top-[7156.5px] w-[495px] h-[431.5px] -scale-y-100 rotate-180">
+            <div className="absolute left-[1135.5px] top-[8260px] w-[495px] h-[431.5px] -scale-y-100 rotate-180">
               <img src="/assets/figma/d05db03fbfbb1e9cc20706181e41a6ee04368ebb.svg" alt="" className="w-full h-full object-contain" />
             </div>
 
             {/* 11. Thanks Left Warm Orange (Figma 85:68) */}
-            <div className="absolute left-[-200px] top-[7300px] w-[1099px] h-[1071px]">
+            <div className="absolute left-[-200px] top-[8410px] w-[1099px] h-[1071px]">
               <img src="/assets/figma/cac39b97b17fd9571806bac16a7264aa07539f09.svg" alt="" className="w-full h-full object-contain" />
             </div>
           </div>

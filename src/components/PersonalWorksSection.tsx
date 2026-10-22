@@ -17,7 +17,7 @@ export const PersonalWorksSection: React.FC<PersonalWorksSectionProps> = ({ acti
     <section
       id="works"
       ref={containerRef}
-      className="relative w-full lg:w-[1440px] min-h-0 lg:h-[1782px] pt-20 sm:pt-28 lg:pt-[95px] pb-20 sm:pb-28 lg:pb-0 overflow-visible px-4 sm:px-8 lg:px-0 scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
+      className="relative w-full lg:w-[1440px] min-h-0 lg:h-[2000px] pt-24 sm:pt-32 lg:pt-[120px] pb-24 sm:pb-32 lg:pb-[120px] overflow-visible px-4 sm:px-8 lg:px-0 scroll-mt-0"
     >
       {/* Mobile-Only Atmospheric Gradient Blobs */}
       <div className="lg:hidden absolute -left-[70px] top-[180px] w-[220px] h-[220px] rounded-full pointer-events-none opacity-35 blur-[28px] bg-[radial-gradient(ellipse_at_center,rgba(8,47,186,0.45)_0%,transparent_70%)] z-0" aria-hidden="true" />
@@ -68,7 +68,7 @@ export const PersonalWorksSection: React.FC<PersonalWorksSectionProps> = ({ acti
 
       {/* Dashed Timeline Line: Left on mobile (20px/24px), centered on desktop (720px) */}
       <div 
-        className="absolute left-[20px] sm:left-[24px] lg:left-[720px] -translate-x-1/2 top-[175px] sm:top-[195px] lg:top-[250px] bottom-12 lg:bottom-auto lg:h-[1140px] w-[6px] pointer-events-none z-0"
+        className="absolute left-[20px] sm:left-[24px] lg:left-[720px] -translate-x-1/2 top-[175px] sm:top-[195px] lg:top-[250px] bottom-12 lg:bottom-auto lg:h-[1350px] w-[6px] pointer-events-none z-0"
       >
         <svg className="w-full h-full" preserveAspectRatio="none">
           <line
@@ -145,7 +145,7 @@ export const PersonalWorksSection: React.FC<PersonalWorksSectionProps> = ({ acti
             </div>
             <div className="w-full lg:w-[337px] aspect-[337/190] shrink-0 rounded-[10px] overflow-hidden shadow-[0px_8px_21.6px_rgba(0,0,0,0.22)] hover:scale-105 active:scale-95 transition-transform duration-300 bg-white cursor-pointer">
               <img
-                src="/assets/figma/wedding_2_cropped.png"
+                src="/assets/figma/wedding_2_cropped.png?v=fixed2"
                 alt="Wedding Photography 2"
                 className="w-full h-full object-cover"
                 loading="lazy"

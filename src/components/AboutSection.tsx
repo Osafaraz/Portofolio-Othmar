@@ -50,7 +50,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ activeSection = '' }
     <section
       id="about"
       ref={containerRef}
-      className="relative w-full lg:w-[1440px] min-h-0 lg:h-[1340px] pt-20 sm:pt-28 lg:pt-[95px] pb-20 sm:pb-28 lg:pb-0 px-4 sm:px-8 lg:px-[100px] isolate overflow-x-clip scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
+      className="relative w-full lg:w-[1440px] min-h-0 lg:h-[1500px] pt-24 sm:pt-32 lg:pt-[110px] pb-24 sm:pb-32 lg:pb-[100px] px-4 sm:px-8 lg:px-[100px] isolate overflow-x-clip scroll-mt-0"
     >
       <div className="w-full flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-8 items-start relative z-10 max-w-xl lg:max-w-none mx-auto">
         

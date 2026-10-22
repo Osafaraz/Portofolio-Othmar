@@ -64,7 +64,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ isEntered }) => {
     <section
       id="home"
       ref={containerRef}
-      className="relative w-full lg:w-[1440px] min-h-[85svh] lg:min-h-0 lg:h-[700px] flex flex-col items-center justify-center lg:justify-start pt-16 sm:pt-20 lg:pt-[130px] pb-16 lg:pb-0 overflow-x-clip px-3 sm:px-4 scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
+      className="relative w-full lg:w-[1440px] min-h-[85svh] lg:min-h-0 lg:h-[750px] flex flex-col items-center justify-center lg:justify-start pt-16 sm:pt-20 lg:pt-[130px] pb-16 lg:pb-[60px] overflow-x-clip px-3 sm:px-4 scroll-mt-0"
     >
       {/* Mobile-Only Atmospheric Gradient Blobs (C1, E: lightweight radial gradients, won't cover title) */}
       <div className="lg:hidden absolute -left-[140px] top-[120px] w-[280px] h-[280px] rounded-full pointer-events-none opacity-40 blur-[28px] bg-[radial-gradient(ellipse_at_center,rgba(8,47,186,0.65)_0%,rgba(162,89,255,0.3)_60%,transparent_75%)] z-0" aria-hidden="true" />
